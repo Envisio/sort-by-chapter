@@ -1,0 +1,38 @@
+{
+  "name": "sort-by-chapter",
+  "version": "1.0.0",
+  "main": "./lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "lint": "eslint ./src/index.js --fix",
+    "build": "babel ./src -d lib --source-maps"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.0.0"
+  },
+  "keywords": [
+    "sort",
+    "chapter",
+    "version",
+    "outline"
+  ],
+  "homepage": "https://github.com/Envisio/sortByChapter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Envisio/sortByChapter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Envisio/sortByChapter/issues",
+    "email": "bshao@envisio.com"
+  },
+  "author": "bshao@envisio.com"
+}
