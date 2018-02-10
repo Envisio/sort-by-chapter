@@ -1,7 +1,6 @@
 const sortByChapter = require('../lib/index');
-const assert = require('assert');
-const chai = require('chai');
-const expect = chai.expect;
+const { expect } = require('chai');
+const { describe, it } = require('mocha');
 
 const arr = ['Goal 1', 'Goal 2', 'Goal 3', 'Strategy 1.1', 'Strategy 1.2', 'Strategy 1.3', 'Activity 1.1.1', 'Activity 1.1.2', 'Activity 1.1.3'];
 
@@ -17,41 +16,41 @@ const objArr = [
   { title: 'Activity 1.1.3' },
 ];
 
-describe('Array', function () {
-  describe('.first', function () {
-    it('should be "Goal 1"', function () {
+describe('Array', () => {
+  describe('.first', () => {
+    it('should be "Goal 1"', () => {
       expect(sortByChapter(arr)[0]).to.equal('Goal 1');
-    })
+    });
   });
-  describe('.last', function () {
-    it('should be "Strategy 1.3"', function () {
+  describe('.last', () => {
+    it('should be "Strategy 1.3"', () => {
       expect(sortByChapter(arr)[8]).to.equal('Goal 3');
-    })
-  })
+    });
+  });
 });
 
-describe('Array with Empty Options', function () {
-  describe('.first', function () {
-    it('should be "Goal 1"', function () {
+describe('Array with Empty Options', () => {
+  describe('.first', () => {
+    it('should be "Goal 1"', () => {
       expect(sortByChapter(arr, {})[0]).to.equal('Goal 1');
-    })
+    });
   });
-  describe('.last', function () {
-    it('should be "Strategy 1.3"', function () {
+  describe('.last', () => {
+    it('should be "Strategy 1.3"', () => {
       expect(sortByChapter(arr, {})[8]).to.equal('Goal 3');
-    })
-  })
+    });
+  });
 });
 
-describe('Array of Object', function () {
-  describe('.first', function () {
-    it('should be "Goal 1"', function () {
+describe('Array of Object', () => {
+  describe('.first', () => {
+    it('should be "Goal 1"', () => {
       expect(sortByChapter(objArr, { attribute: 'title' })[0].title).to.equal('Goal 1');
-    })
+    });
   });
-  describe('.last', function () {
-    it('should be "Strategy 1.3"', function () {
+  describe('.last', () => {
+    it('should be "Strategy 1.3"', () => {
       expect(sortByChapter(objArr, { attribute: 'title' })[8].title).to.equal('Goal 3');
-    })
-  })
+    });
+  });
 });
