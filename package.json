@@ -25,13 +25,13 @@
     "version",
     "outline"
   ],
-  "homepage": "https://github.com/Envisio/sortByChapter",
+  "homepage": "https://github.com/Envisio/sort-by-chapter",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Envisio/sortByChapter.git"
+    "url": "https://github.com/Envisio/sort-by-chapter.git"
   },
   "bugs": {
-    "url": "https://github.com/Envisio/sortByChapter/issues",
+    "url": "https://github.com/Envisio/sort-by-chapter/issues",
     "email": "bshao@envisio.com"
   },
   "author": "bshao@envisio.com"
