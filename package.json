@@ -1,5 +1,5 @@
 {
-  "name": "@envisio/sort-by-chapter",
+  "name": "sort-by-chapter",
   "version": "1.0.0",
   "main": "./lib/index.js",
   "license": "MIT",
