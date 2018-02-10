@@ -1,10 +1,10 @@
 {
-  "name": "sort-by-chapter",
+  "name": "@envisio/sort-by-chapter",
   "version": "1.0.0",
   "main": "./lib/index.js",
   "license": "MIT",
   "scripts": {
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha -report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "lint": "eslint ./src/index.js --fix",
     "build": "babel ./src -d lib --source-maps"
   },
@@ -28,11 +28,12 @@
   "homepage": "https://github.com/Envisio/sort-by-chapter",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Envisio/sort-by-chapter.git"
+    "url": "git+https://github.com/Envisio/sort-by-chapter.git"
   },
   "bugs": {
     "url": "https://github.com/Envisio/sort-by-chapter/issues",
     "email": "bshao@envisio.com"
   },
-  "author": "bshao@envisio.com"
+  "author": "bshao@envisio.com",
+  "description": "Creates an array of elements, sorted in ascending order by the results of running each element in a collection thru each iteratee."
 }
