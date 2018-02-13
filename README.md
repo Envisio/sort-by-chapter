@@ -39,7 +39,7 @@ const arr = [
 const newArr = sortByChapter(arr);
 console.log(newArr);
 ```
-```json
+```
 [ 'Goal 1',
   'Strategy 1.1',
   'Activity 1.1.1',
@@ -70,7 +70,7 @@ const arr = [
 const newArr = sortByChapter(arr, { attribute: 'title' });
 console.log(newArr);
 ```
-```json
+```
 [ { title: 'Goal 1' },
   { title: 'Strategy 1.1' },
   { title: 'Activity 1.1.1' },
