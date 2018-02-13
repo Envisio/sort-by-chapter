@@ -1,3 +1,23 @@
+/**
+ * 
+ * @param {Array} arr
+ * @param {Object} options
+ * @returns {Array}
+ * @example
+ * const arr = [
+ *   'Goal 1',
+ *   'Goal 2',
+ *   'Goal 3',
+ *   'Strategy 1.1',
+ *   'Strategy 1.2',
+ *   'Strategy 1.3',
+ *   'Activity 1.1.1',
+ *   'Activity 1.1.2',
+ *   'Activity 1.1.3'
+ * ];
+ * const newArr = sortByChapter(arr);
+ * console.log(newArr);
+ */
 module.exports = (arr, options) => {
   if (options) {
     const attr = options.attribute;

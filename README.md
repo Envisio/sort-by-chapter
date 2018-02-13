@@ -25,13 +25,21 @@ $ npm install sort-by-chapter
 ```js
 import sortByChapter from 'sort-by-chapter';
 
-const arr = ['Goal 1', 'Goal 2', 'Goal 3', 'Strategy 1.1', 'Strategy 1.2', 'Strategy 1.3', 'Activity 1.1.1', 'Activity 1.1.2', 'Activity 1.1.3'] };
-
+const arr = [
+  'Goal 1',
+  'Goal 2',
+  'Goal 3',
+  'Strategy 1.1',
+  'Strategy 1.2',
+  'Strategy 1.3',
+  'Activity 1.1.1',
+  'Activity 1.1.2',
+  'Activity 1.1.3'
+];
 const newArr = sortByChapter(arr);
-
 console.log(newArr);
-
-/*
+```
+```json
 [ 'Goal 1',
   'Strategy 1.1',
   'Activity 1.1.1',
@@ -41,7 +49,6 @@ console.log(newArr);
   'Strategy 1.3',
   'Goal 2',
   'Goal 3' ]
-*/
 ```
 
 ### Specify Attribute
@@ -60,12 +67,10 @@ const arr = [
   { title: 'Activity 1.1.2' },
   { title: 'Activity 1.1.3' }
 ];
-
 const newArr = sortByChapter(arr, { attribute: 'title' });
-
 console.log(newArr);
-
-/*
+```
+```json
 [ { title: 'Goal 1' },
   { title: 'Strategy 1.1' },
   { title: 'Activity 1.1.1' },
@@ -75,5 +80,4 @@ console.log(newArr);
   { title: 'Strategy 1.3' },
   { title: 'Goal 2' },
   { title: 'Goal 3' } ]
-*/
 ```
