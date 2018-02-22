@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * @param {Array} arr
  * @param {Object} options
  * @returns {Array}
