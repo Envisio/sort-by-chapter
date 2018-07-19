@@ -2,7 +2,7 @@
 
 Creates an array of elements, sorted in ascending order by the results of running each element in a collection thru each iteratee.
 
-[![bitHound Overall Score](https://www.bithound.io/github/Envisio/sort-by-chapter/badges/score.svg)](https://www.bithound.io/github/Envisio/sort-by-chapter) [![Inline docs](http://inch-ci.org/github/Envisio/sort-by-chapter.svg?branch=master&style=shields)](http://inch-ci.org/github/Envisio/sort-by-chapter) [![Build Status](https://travis-ci.org/Envisio/sort-by-chapter.svg?branch=master)](https://travis-ci.org/Envisio/sort-by-chapter) [![Coverage Status](https://coveralls.io/repos/github/Envisio/sort-by-chapter/badge.svg?branch=master)](https://coveralls.io/github/Envisio/sort-by-chapter?branch=master)
+[![Inline docs](http://inch-ci.org/github/Envisio/sort-by-chapter.svg?branch=master&style=shields)](http://inch-ci.org/github/Envisio/sort-by-chapter) [![Build Status](https://travis-ci.org/Envisio/sort-by-chapter.svg?branch=master)](https://travis-ci.org/Envisio/sort-by-chapter) [![Coverage Status](https://coveralls.io/repos/github/Envisio/sort-by-chapter/badge.svg?branch=master)](https://coveralls.io/github/Envisio/sort-by-chapter?branch=master)
 
 ## Examples
 
