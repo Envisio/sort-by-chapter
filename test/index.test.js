@@ -1,6 +1,6 @@
-const sortByChapter = require('../lib/index');
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
+const sortByChapter = require('../lib/index');
 
 const arr = ['Goal 1', 'Goal 2', 'Goal 3', 'Strategy 1.1', 'Strategy 1.2', 'Strategy 1.3', 'Activity 1.1.1', 'Activity 1.1.2', 'Activity 1.1.3'];
 
