@@ -1,5 +1,4 @@
 /**
- *
  * @param {Array} arr
  * @param {Object} options
  * @returns {Array}
@@ -18,7 +17,7 @@
  * const newArr = sortByChapter(arr);
  * console.log(newArr);
  */
-export default (arr, options) => {
+module.exports = (arr, options) => {
   if (options) {
     const attr = options.attribute;
     return arr.sort((a, b) => (attr ? a[attr] : a).match(/(\d+\.*)+/)[0].localeCompare((attr ? b[attr] : b).match(/(\d+\.*)+/)[0], undefined, { numeric: true }));
