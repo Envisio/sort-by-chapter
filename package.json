@@ -13,11 +13,8 @@
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
     "coveralls": "^3.0.0",
-    "eslint": "^5.1.0",
-    "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.8.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^5.0.0"
+    "istanbul": "^0.4.5"
   },
   "keywords": [
     "sort",
@@ -35,5 +32,10 @@
     "email": "bshao@envisio.com"
   },
   "author": "bshao@envisio.com",
-  "description": "Creates an array of elements, sorted in ascending order by the results of running each element in a collection thru each iteratee."
+  "description": "Creates an array of elements, sorted in ascending order by the results of running each element in a collection thru each iteratee.",
+  "dependencies": {
+    "eslint": "^6.2.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "mocha": "^6.2.0"
+  }
 }
