@@ -12,7 +12,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
-    "coveralls": "^3.0.0",
+    "coveralls": "^3.0.7",
     "eslint-plugin-import": "^2.8.0",
     "istanbul": "^0.4.5"
   },
@@ -34,8 +34,8 @@
   "author": "bshao@envisio.com",
   "description": "Creates an array of elements, sorted in ascending order by the results of running each element in a collection thru each iteratee.",
   "dependencies": {
-    "eslint": "^6.2.0",
+    "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
-    "mocha": "^6.2.0"
+    "mocha": "^6.2.2"
   }
 }
