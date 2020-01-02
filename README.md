@@ -56,6 +56,24 @@ const arr = [
 const newArr = sortByChapter(arr, { attribute: 'title' });
 console.log(newArr);
 ```
+or 
+```js
+import sortByChapter from 'sort-by-chapter';
+
+const arr = [
+  { title: 'Goal 1',
+  { title: 'Goal 2' },
+  { title: 'Goal 3' },
+  { title: 'Strategy 1.1' },
+  { title: 'Strategy 1.2' },
+  { title: 'Strategy 1.3' },
+  { title: 'Activity 1.1.1' },
+  { title: 'Activity 1.1.2' },
+  { title: 'Activity 1.1.3' }
+];
+const newArr = sortByChapter(arr, 'title');
+console.log(newArr);
+```
 ```
 [ { title: 'Goal 1' },
   { title: 'Strategy 1.1' },
