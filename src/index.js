@@ -1,6 +1,6 @@
 /**
  * @param {Array} arr
- * @param {Object} options
+ * @param {Object} option
  * @returns {Array}
  * @example
  * const arr = [
@@ -17,16 +17,29 @@
  * const newArr = sortByChapter(arr);
  * console.log(newArr);
  */
-module.exports = (arr, options) => {
-  if (options) {
-    const attr = options.attribute;
-
-    return arr.sort((a, b) => {
-      if (attr && a[attr] && b[attr]) {
-        return a[attr].match(/(\d+\.*)+/)[0].localeCompare(b[attr].match(/(\d+\.*)+/)[0], undefined, { numeric: true });
-      }
-      return true;
-    });
+module.exports = (arr, option) => {
+  if (arr.every((item) => typeof item === 'string')) {
+    return JSON.parse(JSON.stringify(arr)).sort((a, b) => a.match(/(\d+\.*)+/)[0].localeCompare(b.match(/(\d+\.*)+/)[0], undefined, { numeric: true }));
   }
-  return arr.sort((a, b) => a.match(/(\d+\.*)+/)[0].localeCompare(b.match(/(\d+\.*)+/)[0], undefined, { numeric: true }));
+
+  switch (typeof option) {
+    case 'object':
+      if (option.attribute) {
+        const { attribute: attr } = option;
+
+        return JSON.parse(JSON.stringify(arr)).sort((a, b) => a[attr].match(/(\d+\.*)+/)[0].localeCompare(b[attr].match(/(\d+\.*)+/)[0], undefined, { numeric: true }));
+      }
+
+      return arr;
+    case 'string':
+      if (arr.some((obj) => Object.prototype.hasOwnProperty.call(obj, option))) {
+        return JSON.parse(JSON.stringify(arr)).sort((a, b) => a[option].match(/(\d+\.*)+/)[0].localeCompare(b[option].match(/(\d+\.*)+/)[0], undefined, { numeric: true }));
+      }
+
+      return arr;
+    case 'undefined':
+      return arr;
+    default:
+      return arr;
+  }
 };

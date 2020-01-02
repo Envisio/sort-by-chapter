@@ -17,40 +17,51 @@ const objArr = [
 ];
 
 describe('Array', () => {
-  describe('.first', () => {
-    it('should be "Goal 1"', () => {
-      expect(sortByChapter(arr)[0]).to.equal('Goal 1');
-    });
-  });
-  describe('.last', () => {
-    it('should be "Strategy 1.3"', () => {
-      expect(sortByChapter(arr)[8]).to.equal('Goal 3');
-    });
-  });
+  const [first, , , , , , , , last] = sortByChapter(arr);
+
+  it('First should be "Goal 1"', () => expect(first).to.equal('Goal 1'));
+  it('Last should be "Goal 3"', () => expect(last).to.equal('Goal 3'));
 });
 
-describe('Array with Empty Options', () => {
-  describe('.first', () => {
-    it('should be "Goal 1"', () => {
-      expect(sortByChapter(arr, {})[0]).to.equal('Goal 1');
-    });
-  });
-  describe('.last', () => {
-    it('should be "Strategy 1.3"', () => {
-      expect(sortByChapter(arr, {})[8]).to.equal('Goal 3');
-    });
-  });
+describe('Array with Any Option', () => {
+  const [first, , , , , , , , last] = sortByChapter(arr, { foo: 'bar' });
+
+  it('First should be "Goal 1"', () => expect(first).to.equal('Goal 1'));
+  it('Last should be "Goal 3"', () => expect(last).to.equal('Goal 3'));
+});
+
+describe('Array of Object with No Option', () => {
+  const [first, , , , , , , , last] = sortByChapter(objArr);
+  it('First should be "Goal 1"', () => expect(first.title).to.equal('Goal 1'));
+  it('Last should be "Activity 1.1.3"', () => expect(last.title).to.equal('Activity 1.1.3'));
+});
+
+describe('Array of Object with Empty Option', () => {
+  const [first, , , , , , , , last] = sortByChapter(objArr, {});
+  it('First should be "Goal 1"', () => expect(first.title).to.equal('Goal 1'));
+  it('Last should be "Activity 1.1.3"', () => expect(last.title).to.equal('Activity 1.1.3'));
+});
+
+describe('Array of Object with Invalid Option', () => {
+  const [first, , , , , , , , last] = sortByChapter(objArr, 666);
+  it('First should be "Goal 1"', () => expect(first.title).to.equal('Goal 1'));
+  it('Last should be "Activity 1.1.3"', () => expect(last.title).to.equal('Activity 1.1.3'));
+});
+
+describe('Array of Object with Empty String Option', () => {
+  const [{ title: firstTitle }, , , , , , , , { title: lastTitle }] = sortByChapter(objArr, '');
+  it('First should be "Goal 1"', () => expect(firstTitle).to.equal('Goal 1'));
+  it('Last should be "Activity 1.1.3"', () => expect(lastTitle).to.equal('Activity 1.1.3'));
+});
+
+describe('Array of Object with String Option', () => {
+  const [first, , , , , , , , last] = sortByChapter(objArr, 'title');
+  it('First should be "Goal 1"', () => expect(first.title).to.equal('Goal 1'));
+  it('Last should be "Goal 3"', () => expect(last.title).to.equal('Goal 3'));
 });
 
 describe('Array of Object', () => {
-  describe('.first', () => {
-    it('should be "Goal 1"', () => {
-      expect(sortByChapter(objArr, { attribute: 'title' })[0].title).to.equal('Goal 1');
-    });
-  });
-  describe('.last', () => {
-    it('should be "Strategy 1.3"', () => {
-      expect(sortByChapter(objArr, { attribute: 'title' })[8].title).to.equal('Goal 3');
-    });
-  });
+  const [first, , , , , , , , last] = sortByChapter(objArr, { attribute: 'title' });
+  it('First should be "Goal 1"', () => expect(first.title).to.equal('Goal 1'));
+  it('Last should be "Strategy 1.3"', () => expect(last.title).to.equal('Goal 3'));
 });
