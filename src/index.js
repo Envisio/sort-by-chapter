@@ -24,7 +24,7 @@ module.exports = (arr, option) => {
 
   switch (typeof option) {
     case 'object':
-      if (option.attribute && arr.every((obj) => Object.prototype.hasOwnProperty.call(obj, option.attribute))) {
+      if (option.attribute && arr.every((obj) => Object.prototype.hasOwnProperty.call(obj, option.attribute) && typeof obj[option.attribute] === 'string')) {
         const { attribute: attr } = option;
 
         return JSON.parse(JSON.stringify(arr)).sort((a, b) => a[attr].match(/(\d+\.*)+/)[0].localeCompare(b[attr].match(/(\d+\.*)+/)[0], undefined, { numeric: true }));
@@ -32,7 +32,7 @@ module.exports = (arr, option) => {
 
       return arr;
     case 'string':
-      if (arr.every((obj) => Object.prototype.hasOwnProperty.call(obj, option))) {
+      if (arr.every((obj) => Object.prototype.hasOwnProperty.call(obj, option) && obj[option])) {
         return JSON.parse(JSON.stringify(arr)).sort((a, b) => a[option].match(/(\d+\.*)+/)[0].localeCompare(b[option].match(/(\d+\.*)+/)[0], undefined, { numeric: true }));
       }
 
