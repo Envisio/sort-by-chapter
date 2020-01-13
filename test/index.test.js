@@ -16,6 +16,18 @@ const objArr = [
   { title: 'Activity 1.1.3' },
 ];
 
+const objArr2 = [
+  { title: 'Goal 1' },
+  { title: 'Goal 2' },
+  { title: 'Goal 3' },
+  { title: undefined },
+  { title: 'Strategy 1.2' },
+  { title: 'Strategy 1.3' },
+  { title: 'Activity 1.1.1' },
+  { title: 'Activity 1.1.2' },
+  { title: 'Activity 1.1.3' },
+];
+
 describe('Array', () => {
   const [first, , , , , , , , last] = sortByChapter(arr);
 
@@ -74,6 +86,18 @@ describe('Array of Object with Invalid String Option', () => {
 
 describe('Array of Object with Invalid Attribute Option', () => {
   const [first, , , , , , , , last] = sortByChapter(objArr, { attribute: 'name' });
+  it('First should be "Goal 1"', () => expect(first.title).to.equal('Goal 1'));
+  it('Last should be "Activity 1.1.3"', () => expect(last.title).to.equal('Activity 1.1.3'));
+});
+
+describe('Array of Object with String Option and Invalid Attribute', () => {
+  const [first, , , , , , , , last] = sortByChapter(objArr2, 'title');
+  it('First should be "Goal 1"', () => expect(first.title).to.equal('Goal 1'));
+  it('Last should be "Activity 1.1.3"', () => expect(last.title).to.equal('Activity 1.1.3'));
+});
+
+describe('Array of Object with Object Option and Invalid Attribute', () => {
+  const [first, , , , , , , , last] = sortByChapter(objArr2, { attribute: 'title' });
   it('First should be "Goal 1"', () => expect(first.title).to.equal('Goal 1'));
   it('Last should be "Activity 1.1.3"', () => expect(last.title).to.equal('Activity 1.1.3'));
 });
