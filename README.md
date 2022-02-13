@@ -1,8 +1,8 @@
 # sort-by-chapter
 
-Creates an array of elements, sorted in ascending order by the results of running each element in a collection thru each iteratee.
+Creates an array of elements, sorted in ascending order by the element chapter number string or by specific attribute chapter number string.
 
-[![Inline docs](http://inch-ci.org/github/Envisio/sort-by-chapter.svg?branch=master&style=shields)](http://inch-ci.org/github/Envisio/sort-by-chapter) [![Build Status](https://travis-ci.org/Envisio/sort-by-chapter.svg?branch=master)](https://travis-ci.org/Envisio/sort-by-chapter) [![Coverage Status](https://coveralls.io/repos/github/Envisio/sort-by-chapter/badge.svg?branch=master)](https://coveralls.io/github/Envisio/sort-by-chapter?branch=master)
+[![Inline docs](http://inch-ci.org/github/Envisio/sort-by-chapter.svg?branch=master&style=shields)](http://inch-ci.org/github/Envisio/sort-by-chapter) [![Coverage Status](https://coveralls.io/repos/github/Envisio/sort-by-chapter/badge.svg?branch=master)](https://coveralls.io/github/Envisio/sort-by-chapter?branch=master)
 
 ## Examples
 
@@ -20,11 +20,12 @@ const arr = [
   'Strategy 1.3',
   'Activity 1.1.1',
   'Activity 1.1.2',
-  'Activity 1.1.3'
+  'Activity 1.1.3',
 ];
 const newArr = sortByChapter(arr);
 console.log(newArr);
 ```
+
 ```
 [ 'Goal 1',
   'Strategy 1.1',
@@ -56,7 +57,9 @@ const arr = [
 const newArr = sortByChapter(arr, { attribute: 'title' });
 console.log(newArr);
 ```
-or 
+
+or
+
 ```js
 import sortByChapter from 'sort-by-chapter';
 
@@ -74,6 +77,7 @@ const arr = [
 const newArr = sortByChapter(arr, 'title');
 console.log(newArr);
 ```
+
 ```
 [ { title: 'Goal 1' },
   { title: 'Strategy 1.1' },
