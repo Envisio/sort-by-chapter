@@ -1,5 +1,5 @@
 {
-  "extends": "@tsconfig/node16/tsconfig.json",
+  "extends": "@tsconfig/node14/tsconfig.json",
   "compilerOptions": {
     "removeComments": true,
     "declaration": true,
@@ -7,7 +7,8 @@
     "allowUnusedLabels": false,
     "alwaysStrict": true,
     "noImplicitAny": true,
-    "outDir": "lib"
+    "outDir": "lib",
+    "lib": ["ESNext"]
   },
   "include": ["src/*"],
   "exclude": ["node_modules", "src/*.spec.ts"]

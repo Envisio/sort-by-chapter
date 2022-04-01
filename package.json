@@ -30,7 +30,9 @@
     "uglify-js": "^3.15.1"
   },
   "engines": {
-    "node": "16.14.0"
+    "node": "14.19.1",
+    "npm": "8.6.0",
+    "yarn":"1.22.18"
   },
   "homepage": "https://github.com/Envisio/sort-by-chapter",
   "keywords": [
@@ -40,7 +42,7 @@
     "outline"
   ],
   "license": "MIT",
-  "main": "./lib/index.js",
+  "main": "./lib/index.min.js",
   "name": "sort-by-chapter",
   "repository": {
     "type": "git",

@@ -83,7 +83,10 @@ export default function sortByChapter(
           )
         ) {
           return (Array.from(array) as Array<{ [option: string]: string }>).sort(
-            ({ [option]: aAttribute }: { [option: string]: string }, { [option]: bAttribute }: { [option: string]: string }): number => {
+            (
+              { [option]: aAttribute = '' }: { [option: string]: string },
+              { [option]: bAttribute = '' }: { [option: string]: string },
+            ): number => {
               const aMatch = aAttribute.match(/(\d+\.*)+/);
               const bMatch = bAttribute.match(/(\d+\.*)+/);
 
