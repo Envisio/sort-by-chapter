@@ -63,6 +63,17 @@ const objectArray = [
   { title: 'Activity 1.1.2' },
   { title: 'Activity 1.1.3' },
 ];
+const objectArrayWithNumberAttribute = [
+  { title: 1 },
+  { title: 2 },
+  { title: 3 },
+  { title: 11 },
+  { title: 12 },
+  { title: 13 },
+  { title: 111 },
+  { title: 112 },
+  { title: 113 },
+];
 const objectArrayWithUndefinedAttribute = [
   { title: 'Goal 1' },
   { title: 'Goal 2' },
@@ -172,6 +183,32 @@ describe('Array of object', () => {
       { title: 'Strategy 1.3' },
       { title: 'Goal 2' },
       { title: 'Goal 3' },
+    ]));
+});
+describe('Array of object', () => {
+  it('Should be sorted', () =>
+    expect(sortByChapter(objectArrayWithNumberAttribute, 'title')).to.eql([
+      { title: 1 },
+      { title: 2 },
+      { title: 3 },
+      { title: 11 },
+      { title: 12 },
+      { title: 13 },
+      { title: 111 },
+      { title: 112 },
+      { title: 113 },
+    ]));
+  it('Should be sorted', () =>
+    expect(sortByChapter(objectArrayWithNumberAttribute, { attribute: 'title' })).to.eql([
+      { title: 1 },
+      { title: 2 },
+      { title: 3 },
+      { title: 11 },
+      { title: 12 },
+      { title: 13 },
+      { title: 111 },
+      { title: 112 },
+      { title: 113 },
     ]));
 });
 

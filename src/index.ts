@@ -59,8 +59,8 @@ export default function sortByChapter(
         ) {
           return (Array.from(array) as Array<{ [attr: string]: string }>).sort(
             ({ [attr]: aAttribute }: { [attr: string]: string }, { [attr]: bAttribute }: { [attr: string]: string }): number => {
-              const aMatch = aAttribute.match(/(\d+\.*)+/);
-              const bMatch = bAttribute.match(/(\d+\.*)+/);
+              const aMatch = String(aAttribute).match(/(\d+\.*)+/);
+              const bMatch = String(bAttribute).match(/(\d+\.*)+/);
 
               if (aMatch && bMatch && aMatch.length && bMatch.length) {
                 return aMatch[0].localeCompare(bMatch[0], undefined, {
@@ -87,8 +87,8 @@ export default function sortByChapter(
               { [option]: aAttribute = '' }: { [option: string]: string },
               { [option]: bAttribute = '' }: { [option: string]: string },
             ): number => {
-              const aMatch = aAttribute.match(/(\d+\.*)+/);
-              const bMatch = bAttribute.match(/(\d+\.*)+/);
+              const aMatch = String(aAttribute).match(/(\d+\.*)+/);
+              const bMatch = String(bAttribute).match(/(\d+\.*)+/);
 
               if (aMatch && bMatch && aMatch.length && bMatch.length) {
                 return aMatch[0].localeCompare(bMatch[0], undefined, {
