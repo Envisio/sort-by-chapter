@@ -8,7 +8,8 @@
     "alwaysStrict": true,
     "noImplicitAny": true,
     "outDir": "lib",
-    "lib": ["ESNext"]
+    "lib": ["ESNext"],
+    "target": "ES5"
   },
   "include": ["src/*"],
   "exclude": ["node_modules", "src/*.spec.ts"]
