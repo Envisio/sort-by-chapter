@@ -1,7 +1,7 @@
 {
   "author": {
     "email": "s@zhso.net",
-    "name": "ZhenHua Shao",
+    "name": "Zhenhua Shao",
     "url": "https://github.com/zhso"
   },
   "bugs": {
@@ -10,29 +10,29 @@
   },
   "description": "Return sorted items by chapter number with specific key in new array.",
   "devDependencies": {
-    "@types/chai": "^4.3.4",
-    "@types/mocha": "^10.0.1",
-    "@types/node": "^18.15.11",
-    "@typescript-eslint/eslint-plugin": "^5.57.1",
-    "@typescript-eslint/parser": "^5.57.1",
+    "@types/chai": "^4.3.17",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^22.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
     "chai": "^4.3.7",
     "coveralls": "^3.1.1",
-    "eslint": "^8.37.0",
+    "eslint": "^9.8.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-prettier": "^4.2.1",
-    "mocha": "^10.2.0",
-    "nyc": "^15.1.0",
-    "prettier": "^2.8.7",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.3",
-    "uglify-js": "^3.17.4"
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "mocha": "^10.7.0",
+    "nyc": "^17.0.0",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "uglify-js": "^3.19.1"
   },
   "engines": {
-    "node": ">=14.0.0",
-    "npm": ">=6.14.4",
-    "yarn": ">=1.22.18"
+    "node": ">=18.18.0",
+    "npm": ">=9.8.1",
+    "yarn": ">=1.22.22"
   },
   "homepage": "https://github.com/Envisio/sort-by-chapter",
   "keywords": [
