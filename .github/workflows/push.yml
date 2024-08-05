@@ -15,6 +15,6 @@ jobs:
           node-version: 18.18.0
       - run: yarn
       - run: yarn build
-      - uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      # - uses: coverallsapp/github-action@master
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
