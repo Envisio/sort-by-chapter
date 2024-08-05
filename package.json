@@ -1,12 +1,12 @@
 {
   "author": {
-    "email": "s@zhso.net",
-    "name": "Zhenhua Shao",
+    "email": "bshao@envisio.com",
+    "name": "Barry Shao",
     "url": "https://github.com/zhso"
   },
   "bugs": {
     "url": "https://github.com/Envisio/sort-by-chapter/issues",
-    "email": "s@zhso.net"
+    "email": "bshao@envisio.com"
   },
   "description": "Return sorted items by chapter number with specific key in new array.",
   "devDependencies": {
