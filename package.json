@@ -11,21 +11,7 @@
   "description": "Return sorted items by chapter number with specific key in new array.",
   "devDependencies": {
     "@tsconfig/node18": "^18.2.4",
-    "@types/chai": "^4.3.17",
-    "@types/mocha": "^10.0.7",
     "@types/node": "^22.1.0",
-    "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^8.0.0",
-    "chai": "^4.3.7",
-    "coveralls": "^3.1.1",
-    "eslint": "^9.8.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-prettier": "^5.2.1",
-    "mocha": "^10.7.0",
-    "nyc": "^17.0.0",
-    "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
     "uglify-js": "^3.19.1"
@@ -50,10 +36,7 @@
     "url": "https://github.com/Envisio/sort-by-chapter.git"
   },
   "scripts": {
-    "test": "yarn build && nyc mocha && nyc report --reporter=text-lcov | coveralls",
-    "lint": "eslint ./src --ext .ts --fix",
     "build": "tsc src/index.ts && uglifyjs -c -m -o lib/index.min.js -- lib/index.js"
   },
-  "version": "1.1.12",
-  "dependencies": {}
+  "version": "1.1.12"
 }
