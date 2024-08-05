@@ -11,6 +11,6 @@
     "lib": ["ESNext"],
     "target": "ES5"
   },
-  "include": ["src/*"],
-  "exclude": ["node_modules", "src/*.spec.ts"]
+  "include": ["src/*.ts"],
+  "exclude": ["node_modules", "test"]
 }

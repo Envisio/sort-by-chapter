@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { describe, it } from 'mocha';
-import sortByChapter from '../lib/index.js';
+import sortByChapter from '../lib/index.min.js';
 
 const stringArray = [
   'Goal 1',
