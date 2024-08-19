@@ -29,9 +29,9 @@ export default function sortByChapter(
 ): Array<string | object | null | undefined> {
   if (array instanceof Array) {
     if (array.every((item: string | object | undefined | null): boolean => typeof item === 'string')) {
-      return (Array.from(array) as Array<string>).sort((a: string, b: string): number => {
-        const aMatch = a.match(/(\d+\.*)+/);
-        const bMatch = b.match(/(\d+\.*)+/);
+      return (Array.from(array) as Array<string>).sort((a: string = '', b: string = ''): number => {
+        const aMatch = a.split(' ').reverse()[0].match(/(\d+\.*)+/);
+        const bMatch = b.split(' ').reverse()[0].match(/(\d+\.*)+/);
 
         if (aMatch && bMatch && aMatch.length && bMatch.length) {
           return aMatch[0].localeCompare(bMatch[0], undefined, {
