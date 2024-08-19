@@ -25,26 +25,35 @@ export default function sortByChapter(
         attribute: string;
       }
     | undefined
-    | null,
+    | null
 ): Array<string | object | null | undefined> {
   if (array instanceof Array) {
-    if (array.every((item: string | object | undefined | null): boolean => typeof item === 'string')) {
-      return (Array.from(array) as Array<string>).sort((a: string = '', b: string = ''): number => {
-        const aMatch = a.split(' ').reverse()[0].match(/(\d+\.*)+/);
-        const bMatch = b.split(' ').reverse()[0].match(/(\d+\.*)+/);
+    if (
+      array.every(
+        (item: string | object | undefined | null): boolean =>
+          typeof item === "string"
+      )
+    ) {
+      return (Array.from(array) as Array<string>).sort(
+        (a: string = "", b: string = ""): number => {
+          const aValue = a.split(" ").reverse()[0];
+          const bValue = b.split(" ").reverse()[0];
+          const aMatch = aValue.match(/(\d+\.*)+/);
+          const bMatch = bValue.match(/(\d+\.*)+/);
 
-        if (aMatch && bMatch && aMatch.length && bMatch.length) {
-          return aMatch[0].localeCompare(bMatch[0], undefined, {
-            numeric: true,
-          });
+          if (aMatch && bMatch && aMatch.length && bMatch.length) {
+            return aMatch[0].localeCompare(bMatch[0], undefined, {
+              numeric: true,
+            });
+          }
+
+          return 0;
         }
-
-        return 0;
-      });
+      );
     }
 
     switch (typeof option) {
-      case 'object': {
+      case "object": {
         if (option === null) {
           return array;
         }
@@ -54,13 +63,20 @@ export default function sortByChapter(
         if (
           attr &&
           (array as Array<object>).every(
-            (item: object): boolean => typeof item === 'object' && Object.getOwnPropertyDescriptor(item, attr)?.value,
+            (item: object): boolean =>
+              typeof item === "object" &&
+              Object.getOwnPropertyDescriptor(item, attr)?.value
           )
         ) {
           return (Array.from(array) as Array<{ [attr: string]: string }>).sort(
-            ({ [attr]: aAttribute }: { [attr: string]: string }, { [attr]: bAttribute }: { [attr: string]: string }): number => {
-              const aMatch = String(aAttribute).match(/(\d+\.*)+/);
-              const bMatch = String(bAttribute).match(/(\d+\.*)+/);
+            (
+              { [attr]: aAttribute }: { [attr: string]: string },
+              { [attr]: bAttribute }: { [attr: string]: string }
+            ): number => {
+              const aValue = String(aAttribute).split(" ").reverse()[0];
+              const bValue = String(bAttribute).split(" ").reverse()[0];
+              const aMatch = aValue.match(/(\d+\.*)+/);
+              const bMatch = bValue.match(/(\d+\.*)+/);
 
               if (aMatch && bMatch && aMatch.length && bMatch.length) {
                 return aMatch[0].localeCompare(bMatch[0], undefined, {
@@ -69,26 +85,32 @@ export default function sortByChapter(
               }
 
               return 0;
-            },
+            }
           );
         }
 
         return array;
       }
-      case 'string':
+      case "string":
         if (
           option &&
           (array as Array<object>).every(
-            (obj: string | object): boolean => typeof obj === 'object' && Object.getOwnPropertyDescriptor(obj, option)?.value,
+            (obj: string | object): boolean =>
+              typeof obj === "object" &&
+              Object.getOwnPropertyDescriptor(obj, option)?.value
           )
         ) {
-          return (Array.from(array) as Array<{ [option: string]: string }>).sort(
+          return (
+            Array.from(array) as Array<{ [option: string]: string }>
+          ).sort(
             (
-              { [option]: aAttribute = '' }: { [option: string]: string },
-              { [option]: bAttribute = '' }: { [option: string]: string },
+              { [option]: aAttribute = "" }: { [option: string]: string },
+              { [option]: bAttribute = "" }: { [option: string]: string }
             ): number => {
-              const aMatch = String(aAttribute).match(/(\d+\.*)+/);
-              const bMatch = String(bAttribute).match(/(\d+\.*)+/);
+              const aValue = String(aAttribute).split(" ").reverse()[0];
+              const bValue = String(bAttribute).split(" ").reverse()[0];
+              const aMatch = aValue.match(/(\d+\.*)+/);
+              const bMatch = bValue.match(/(\d+\.*)+/);
 
               if (aMatch && bMatch && aMatch.length && bMatch.length) {
                 return aMatch[0].localeCompare(bMatch[0], undefined, {
@@ -97,7 +119,7 @@ export default function sortByChapter(
               }
 
               return 0;
-            },
+            }
           );
         }
 
